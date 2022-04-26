@@ -2,8 +2,11 @@ package com.AshokIt.Service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.AshokIt.Entity.Contact;
 
+@Service
 public interface ContactService {
 	
 	public String upsert (Contact contact);

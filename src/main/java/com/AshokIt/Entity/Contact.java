@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="/CONTACT_DTLS")
+@Table(name="CONTACT_DTLS")
 public class Contact {
 	
 	@Id
