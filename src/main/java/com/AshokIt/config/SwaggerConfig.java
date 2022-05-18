@@ -18,7 +18,7 @@ public class SwaggerConfig {
 		
 		return new Docket(DocumentationType.SWAGGER_2)
 				   .select()
-				   .apis(RequestHandlerSelectors.basePackage("in.ashokit.Controller"))
+				   .apis(RequestHandlerSelectors.basePackage("com.ashokit.Controller"))
 				   .paths(PathSelectors.any())
 				   .build();
 	}

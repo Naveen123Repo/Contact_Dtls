@@ -21,7 +21,7 @@ public class ContactRestController {
 	@Autowired
 	private ContactService service;
 	
-	@PostMapping("/Contact")
+	@PostMapping("/contact")
 	public ResponseEntity<String> CreateContact(@RequestBody Contact contact){
 		
 		String status = service.upsert(contact);
@@ -29,7 +29,7 @@ public class ContactRestController {
 		return new ResponseEntity<>(status,HttpStatus.CREATED);	
 	}
 	
-	@GetMapping("/Contacts")
+	@GetMapping("/contacts")
 	public ResponseEntity<List<Contact>> getAllContacts(){
 		
 		List<Contact> allContacts = service.getAllContacts();
@@ -38,17 +38,17 @@ public class ContactRestController {
 		
 	}
 	
-	@GetMapping("/Contact/{cid}")
+	@GetMapping("/contact/{cid}")
 	public ResponseEntity<Contact> getContact(@PathVariable int cid){
 		
 		Contact contact = service.getContact(cid);
 		return new ResponseEntity<>(contact,HttpStatus.OK);
 		
 	}
-	@DeleteMapping("/Contact/{cid}")
-	public ResponseEntity<String> deleteContactById(@PathVariable int cid){
+	@DeleteMapping("/contact/{id}")
+	public ResponseEntity<String> deleteContactById(@PathVariable int id){
 		
-		String deleteContact = service.deleteContact(cid);
+		String deleteContact = service.deleteContact(id);
 		return new ResponseEntity<>(deleteContact,HttpStatus.OK);
 		
 	}
